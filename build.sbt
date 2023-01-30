@@ -47,3 +47,9 @@ Test / requireJsDomEnv := true
 Test / npmDependencies += "react-dom" -> "18.2.0"
 
 Test / npmDependencies += "react-test-renderer" -> "18.2.0"
+
+scalacOptions ++= PartialFunction.condOpt(
+  VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector("<1"))
+) { case true =>
+  "-P:scalajs:sjsDefinedByDefault"
+}
