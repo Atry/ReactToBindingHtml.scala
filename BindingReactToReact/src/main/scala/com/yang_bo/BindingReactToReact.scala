@@ -16,7 +16,7 @@ import scala.scalajs.js
   *   {{{
   *   import com.thoughtworks.binding.Binding
   *   import com.thoughtworks.binding.Binding.Var
-  *   import com.yang_bo.ReactBinding.ImplicitConversions._
+  *   import com.yang_bo.BindingReactToReact.ImplicitConversions._
   *   import slinky.web.html._
   *   import slinky.core.facade._
   *
@@ -25,8 +25,8 @@ import scala.scalajs.js
   *       button(id := "minus", onClick := { e => currentNumber.value -= 1 })(
   *         "-"
   *       ),
-  *       // With the help of `ImplicitConversions`, `Binding` can be used as an
-  *       // React element
+  *       // With the help of `BindingReactToReact.ImplicitConversions`,
+  *       // a `Binding` block can be used as a React element
   *       Binding {
   *         // `.bind` is allowed in the Binding block
   *         label(currentNumber.bind.toString)
@@ -65,7 +65,7 @@ import scala.scalajs.js
   *   )
   *   }}}
   */
-object ReactBinding extends ComponentWrapper {
+object BindingReactToReact extends ComponentWrapper {
   type Props = Binding[ReactElement]
   type State = ReactElement
 
@@ -88,11 +88,11 @@ object ReactBinding extends ComponentWrapper {
     }
   }
 
-  private[ReactBinding] trait LowPriorityImplicitConversions1024 {
+  private[BindingReactToReact] trait LowPriorityImplicitConversions1024 {
     @inline implicit def bindingToReactElement[From](
         binding: Binding[From]
     )(implicit toReactElement: From => ReactElement): ReactElement =
-      ReactBinding(
+      BindingReactToReact(
         new Binding.Map[From, ReactElement](binding, toReactElement)
       )
   }
@@ -100,7 +100,7 @@ object ReactBinding extends ComponentWrapper {
   object ImplicitConversions extends LowPriorityImplicitConversions1024 {
     @inline implicit def bindingReactElementToReactElement(
         binding: Binding[ReactElement]
-    ): ReactElement = ReactBinding(binding)
+    ): ReactElement = BindingReactToReact(binding)
   }
 
 }
