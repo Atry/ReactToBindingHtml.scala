@@ -14,7 +14,7 @@ libraryDependencies += {
 
 libraryDependencies += {
   if (
-    VersionNumber(scalaVersion.value).matchesSemVer(SemanticSelector(">=2.12"))
+    VersionNumber(scalaVersion.value).matchesSemVer(SemanticSelector(">=2.13"))
   ) {
     "com.thoughtworks.binding" %%% "binding" % "12.2.0"
   } else {
