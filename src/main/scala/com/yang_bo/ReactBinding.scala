@@ -10,9 +10,8 @@ import scala.scalajs.js
   *
   * @example
   *   With the help of [[ImplicitConversions]],
-  *   [[com.thoughtworks.binding.Binding]] can be used as an React element.
-  *
-  *   The following code create a spinner, which includes a label whose value is
+  *   [[com.thoughtworks.binding.Binding]] can be used as an React element. The
+  *   following code create a spinner, which includes a label whose value is
   *   automatically updated according to `currentNumber`:
   *   {{{
   *   import com.thoughtworks.binding.Binding
@@ -71,7 +70,8 @@ object ReactBinding extends ComponentWrapper {
   type State = ReactElement
 
   final class Def(jsProps: js.Object) extends Definition(jsProps) {
-    private val setterBinding = props.map(setState)
+    private val setterBinding =
+      new Binding.Map[ReactElement, Unit](props, setState)
 
     def initialState = null
 
@@ -93,7 +93,7 @@ object ReactBinding extends ComponentWrapper {
         binding: Binding[From]
     )(implicit toReactElement: From => ReactElement): ReactElement =
       ReactBinding(
-        binding.map(toReactElement)
+        new Binding.Map[From, ReactElement](binding, toReactElement)
       )
   }
 
