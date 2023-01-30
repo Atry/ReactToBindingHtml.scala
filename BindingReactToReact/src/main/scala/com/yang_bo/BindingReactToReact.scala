@@ -9,14 +9,14 @@ import scala.scalajs.js
 /** A React Component backed by a `Binding[ReactElement]`.
   *
   * @example
-  *   With the help of [[ImplicitConversions]],
+  *   With the help of [[Implicits]],
   *   [[com.thoughtworks.binding.Binding]] can be used as an React element. The
   *   following code create a spinner, which includes a label whose value is
   *   automatically updated according to `currentNumber`:
   *   {{{
   *   import com.thoughtworks.binding.Binding
   *   import com.thoughtworks.binding.Binding.Var
-  *   import com.yang_bo.BindingReactToReact.ImplicitConversions._
+  *   import com.yang_bo.BindingReactToReact.Implicits._
   *   import slinky.web.html._
   *   import slinky.core.facade._
   *
@@ -25,7 +25,7 @@ import scala.scalajs.js
   *       button(id := "minus", onClick := { e => currentNumber.value -= 1 })(
   *         "-"
   *       ),
-  *       // With the help of `BindingReactToReact.ImplicitConversions`,
+  *       // With the help of `BindingReactToReact.Implicits`,
   *       // a `Binding` block can be used as a React element
   *       Binding {
   *         // `.bind` is allowed in the Binding block
@@ -88,7 +88,7 @@ object BindingReactToReact extends ComponentWrapper {
     }
   }
 
-  private[BindingReactToReact] trait LowPriorityImplicitConversions1024 {
+  private[BindingReactToReact] trait LowPriorityImplicits1024 {
     @inline implicit def bindingToReactElement[From](
         binding: Binding[From]
     )(implicit toReactElement: From => ReactElement): ReactElement =
@@ -97,7 +97,7 @@ object BindingReactToReact extends ComponentWrapper {
       )
   }
 
-  object ImplicitConversions extends LowPriorityImplicitConversions1024 {
+  object Implicits extends LowPriorityImplicits1024 {
     @inline implicit def bindingReactElementToReactElement(
         binding: Binding[ReactElement]
     ): ReactElement = BindingReactToReact(binding)
