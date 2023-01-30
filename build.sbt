@@ -2,6 +2,8 @@ enablePlugins(ScalaJSPlugin)
 
 ThisBuild / organization := "com.yang-bo"
 
+name := "ReactBinding"
+
 libraryDependencies += {
   if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector(">=1"))) {
      "me.shadaj" %%% "slinky-core" % "0.7.3"
