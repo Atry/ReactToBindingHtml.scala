@@ -1,4 +1,5 @@
-package com.yang_bo
+package com.yang_bo.reactbinding
+
 import com.thoughtworks.binding.Binding
 import slinky.core._
 import slinky.core.facade._
