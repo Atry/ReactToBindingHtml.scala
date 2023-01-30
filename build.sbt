@@ -42,8 +42,6 @@ libraryDependencies += {
   }
 }
 
-webpack / version := "5.75.0"
-
 Test / requireJsDomEnv := true
 
 Test / npmDependencies += "react-dom" -> "18.2.0"
