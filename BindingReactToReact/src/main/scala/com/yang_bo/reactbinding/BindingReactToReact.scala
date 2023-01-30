@@ -17,7 +17,7 @@ import scala.scalajs.js
   *   {{{
   *   import com.thoughtworks.binding.Binding
   *   import com.thoughtworks.binding.Binding.Var
-  *   import com.yang_bo.BindingReactToReact.Implicits._
+  *   import com.yang_bo.reactbinding.BindingReactToReact.Implicits._
   *   import slinky.web.html._
   *   import slinky.core.facade._
   *
