@@ -52,10 +52,24 @@ object BindingHtmlToReact extends ComponentWrapper {
 
   }
 
-  object Implicits {
-    @inline implicit def bindingReactElementToReactElement(
+  private[BindingHtmlToReact] trait LowPriorityImplicits1024 {
+    @inline implicit def bindableSeqToReactElement[From](
+        from: From
+    )(implicit bindableSeq: BindableSeq.Lt[From, Node]): ReactElement =
+      BindingHtmlToReact(
+        Props(
+          bindableSeq.toBindingSeq(from),
+          wrapperRef => span(ref := wrapperRef)
+        )
+      )
+  }
+
+  object Implicits extends LowPriorityImplicits1024 {
+    @inline implicit def bindingSeqToReactElement(
         bindingSeq: BindingSeq[Node]
     ): ReactElement =
-      BindingHtmlToReact(Props(bindingSeq, wrapperRef => span(ref := wrapperRef)))
+      BindingHtmlToReact(
+        Props(bindingSeq, wrapperRef => span(ref := wrapperRef))
+      )
   }
 }
