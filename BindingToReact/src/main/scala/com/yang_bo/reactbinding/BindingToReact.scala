@@ -28,7 +28,7 @@ object BindingToReact extends ComponentWrapper {
     private val mountPoint = Binding {
       wrapperVar.bind match {
         case Some(wrapperElement) =>
-          new NodeSeqMountPoint(wrapperElement, props.bindingSeq)
+          new DomMountPoint(wrapperElement, props.bindingSeq)
         case None =>
       }
     }

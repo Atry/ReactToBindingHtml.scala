@@ -8,7 +8,7 @@ import org.scalajs.dom.raw._
 import scala.scalajs.js
 import scala.annotation.tailrec
 
-private[reactbinding] object NodeSeqMountPoint {
+private[reactbinding] object DomMountPoint {
   @inline
   @tailrec
   def removeAll(parent: Node): Unit = {
@@ -20,7 +20,7 @@ private[reactbinding] object NodeSeqMountPoint {
   }
 }
 
-final class NodeSeqMountPoint(
+final class DomMountPoint(
     parent: Node with ParentNode,
     childrenBinding: BindingSeq[Node]
 ) extends Binding.MultiMountPoint[Node](childrenBinding) {
@@ -29,7 +29,7 @@ final class NodeSeqMountPoint(
     set(children: Iterable[Node])
   }
   protected def set(children: Iterable[Node]): Unit = {
-    NodeSeqMountPoint.removeAll(parent)
+    DomMountPoint.removeAll(parent)
     for (child <- children) {
       if (child.parentNode != null) {
         throw new IllegalStateException(
