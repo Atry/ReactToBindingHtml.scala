@@ -12,7 +12,7 @@ import slinky.core.facade._
 import scala.scalajs.js
 import slinky.web.ReactDOM
 
-final class ReactToBinding[WrapperElement <: Element](
+final class ReactToBindingHtml[WrapperElement <: Element](
     reactElement: ReactElement,
     wrapperElement: WrapperElement
 ) extends Binding[WrapperElement] {
@@ -41,7 +41,7 @@ final class ReactToBinding[WrapperElement <: Element](
 
 }
 
-object ReactToBinding {
+object ReactToBindingHtml {
   object Implicits {
     implicit val reactElementBindable: Bindable.Aux[ReactElement, Element]
       with BindableSeq.Aux[ReactElement, Element] = new Bindable[ReactElement]
@@ -49,7 +49,7 @@ object ReactToBinding {
       type Value = Element
 
       def toBinding(from: ReactElement): Binding[Value] =
-        new ReactToBinding(from, document.createElement("span"))
+        new ReactToBindingHtml(from, document.createElement("span"))
 
       def toBindingSeq(
           from: ReactElement

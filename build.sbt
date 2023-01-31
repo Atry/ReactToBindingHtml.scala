@@ -1,12 +1,12 @@
 ThisBuild / organization := "com.yang-bo.reactbinding"
 
-lazy val DomMountPoint = project
+lazy val HtmlMountPoint = project
 
 lazy val BindingReactToReact = project
 
-lazy val BindingToReact = project.dependsOn(DomMountPoint)
+lazy val BindingHtmlToReact = project.dependsOn(HtmlMountPoint)
 
-lazy val ReactToBinding = project
+lazy val ReactToBindingHtml = project
 
 publish / skip := true
 

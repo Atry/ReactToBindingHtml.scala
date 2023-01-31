@@ -16,7 +16,7 @@ import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.annotation.tailrec
 
-object BindingToReact extends ComponentWrapper {
+object BindingHtmlToReact extends ComponentWrapper {
   final case class Props(
       bindingSeq: BindingSeq[Node],
       wrapper: ReactRef[Node with ParentNode] => ReactElement
@@ -28,7 +28,7 @@ object BindingToReact extends ComponentWrapper {
     private val mountPoint = Binding {
       wrapperVar.bind match {
         case Some(wrapperElement) =>
-          new DomMountPoint(wrapperElement, props.bindingSeq)
+          new HtmlMountPoint(wrapperElement, props.bindingSeq)
         case None =>
       }
     }
@@ -56,6 +56,6 @@ object BindingToReact extends ComponentWrapper {
     @inline implicit def bindingReactElementToReactElement(
         bindingSeq: BindingSeq[Node]
     ): ReactElement =
-      BindingToReact(Props(bindingSeq, wrapperRef => span(ref := wrapperRef)))
+      BindingHtmlToReact(Props(bindingSeq, wrapperRef => span(ref := wrapperRef)))
   }
 }
