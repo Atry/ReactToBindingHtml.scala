@@ -22,7 +22,7 @@ import scala.scalajs.js
   *   import slinky.core.facade._
   *
   *   def spinner(currentNumber: Var[Int]) = {
-  *     div(
+  *     span(
   *       button(id := "minus", onClick := { e => currentNumber.value -= 1 })(
   *         "-"
   *       ),
@@ -51,7 +51,7 @@ import scala.scalajs.js
   *   }
   *   currentNumber.value should be(50)
   *   document.body.innerHTML should be(
-  *     """<div><button id="minus">-</button><label>50</label><button id="plus">+</button></div>"""
+  *     """<span><button id="minus">-</button><label>50</label><button id="plus">+</button></span>"""
   *   )
   *
   *   TestRenderer.act { () =>
@@ -62,7 +62,7 @@ import scala.scalajs.js
   *   }
   *   currentNumber.value should be(49)
   *   document.body.innerHTML should be(
-  *     """<div><button id="minus">-</button><label>49</label><button id="plus">+</button></div>"""
+  *     """<span><button id="minus">-</button><label>49</label><button id="plus">+</button></span>"""
   *   )
   *   }}}
   */
