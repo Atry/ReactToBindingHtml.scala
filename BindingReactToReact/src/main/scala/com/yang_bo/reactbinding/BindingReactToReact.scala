@@ -90,7 +90,7 @@ object BindingReactToReact extends ComponentWrapper {
   }
 
   private[BindingReactToReact] trait LowPriorityImplicits1024 {
-    @inline implicit def BindingHtmlToReactElement[From](
+    @inline implicit def bindingReactElementLikeToReactElement[From](
         binding: Binding[From]
     )(implicit toReactElement: From => ReactElement): ReactElement =
       BindingReactToReact(
