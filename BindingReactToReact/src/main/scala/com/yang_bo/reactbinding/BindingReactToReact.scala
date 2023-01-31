@@ -7,11 +7,11 @@ import slinky.core.facade._
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-/** A React Component backed by a `Binding[ReactElement]`.
+/** A React component backed by a `Binding[ReactElement]`.
   *
   * @example
   *   With the help of [[Implicits]],
-  *   [[com.thoughtworks.binding.Binding]] can be used as an React element. The
+  *   [[com.thoughtworks.binding.Binding]] can be used as a React element. The
   *   following code create a spinner, which includes a label whose value is
   *   automatically updated according to `currentNumber`:
   *   {{{
