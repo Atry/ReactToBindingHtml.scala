@@ -141,7 +141,7 @@ val rootView = {
 render(documet.body, rootView)
 ```
 
-Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala and the `BindingReactToReact` React components, which enable Binding.scala, are instantiated implicitly.
+Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly.
 
 ## Related tools
 
