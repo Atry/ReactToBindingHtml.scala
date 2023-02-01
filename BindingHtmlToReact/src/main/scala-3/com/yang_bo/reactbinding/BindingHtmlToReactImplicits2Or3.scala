@@ -45,8 +45,7 @@ private[reactbinding] trait BindingHtmlToReactImplicits2Or3 {
     *   {{{
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer
-    *   import org.scalajs.dom._
-    *   import org.scalajs.dom.raw._
+    *   import org.scalajs.dom.document
     *   TestRenderer.act { () =>
     *     ReactDOM.render(reactRoot, document.body)
     *   }
