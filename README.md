@@ -143,7 +143,7 @@ val rootView = {
 render(documet.body, rootView)
 ```
 
-Even though adapters from this repository provide the flexibility to choose to create UI in either React or real DOM, to maximize the benifits from the Binding.scala's precise data-binding, `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and let `BindingReactToReact` React components be instantiated implicitly, when using existing React components.
+Even though adapters from this repository provide the flexibility to choose to create UI in either React or real DOM, to minimize the cost due to React rerendering, `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, to take the advantage of Binding.scala's precise data-binding, manage the application states in Binding.scala, and let the `BindingReactToReact` React components be instantiated implicitly, when using existing React components.
 
 Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
 
