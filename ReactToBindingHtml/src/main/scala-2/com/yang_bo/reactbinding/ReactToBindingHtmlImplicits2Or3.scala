@@ -1,6 +1,7 @@
 package com.yang_bo.reactbinding
 
 import com.thoughtworks.binding.Binding.BindingSeq
+import com.thoughtworks.binding.bindable._
 import org.scalajs.dom._
 import org.scalajs.dom.raw._
 import slinky.core.facade._
