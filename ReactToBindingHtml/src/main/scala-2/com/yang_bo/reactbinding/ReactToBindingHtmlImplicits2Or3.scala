@@ -10,9 +10,12 @@ private[reactbinding] trait ReactToBindingHtmlImplicits2Or3 {
   /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows
     * for using React component in a Binding.scala HTML template.
-    * 
-    * @todo examples for Scala 2
+    *
+    * @todo
+    *   examples for Scala 2
     */
-  def reactElementBindable: Any
+  def reactElementBindable[From](implicit
+      toReactElement: From => ReactElement
+  ): Bindable.Aux[From, Element] with BindableSeq.Aux[From, Element]
 
 }
