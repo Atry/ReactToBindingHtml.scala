@@ -7,8 +7,6 @@ import slinky.core.facade._
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-import com.yang_bo.BindingReactToReact
-
 /** A React component backed by a `Binding[ReactElement]`.
   *
   * @example
