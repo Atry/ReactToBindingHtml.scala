@@ -143,11 +143,11 @@ val rootView = {
 render(documet.body, rootView)
 ```
 
-To maximize the benifits from the Binding.scala's precise data-binding, `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
+Even though adapters from this repository provides the flexibility to choose to create UI in either React or real DOM, to maximize the benifits from the Binding.scala's precise data-binding, `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
 
 ## Related tools
 
-These adapters work with React types defined in [Slinky](https://slinky.dev/) by default. Other sources of React components need to be converted to Slinky types first.
+Adapters from this repository work with React types defined in [Slinky](https://slinky.dev/) by default. Other sources of React components need to be converted to Slinky types first.
 
 - React components defined in [scalajs-react](https://github.com/japgolly/scalajs-react) can be converted into Slinky types via [toSlinky](https://slinky.dev/docs/scalajs-react-interop), in order to use them in Binding.scala apps with the help of adapters from this repository.
 - React components defined in TypeScript can be converted to Slinky types via [ScalablyTyped](https://scalablytyped.org/) with [Flavour.Slinky](https://scalablytyped.org/docs/flavour), in order to use them in Binding.scala apps with the help of adapters from this repository.
