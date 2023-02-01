@@ -23,9 +23,9 @@ However, currently there are more third-party components in the React ecosystem 
 // build.sbt
 libraryDependencies ++= Seq(
   "com.yang-bo" %%% "html" % (if (scalaBinaryVersion.value == "3") "3+" else "2+"),
-  "com.yang-bo" %%% "bindingreacttoreact" % "latest.release",
-  "com.yang-bo" %%% "reacttobindinghtml" % "latest.release",
-  "com.yang-bo" %%% "bindinghtmltoreact" % "latest.release",
+  "com.yang-bo" %%% "bindingreacttoreact" % "1+",
+  "com.yang-bo" %%% "reacttobindinghtml" % "1+",
+  "com.yang-bo" %%% "bindinghtmltoreact" % "1+",
 )
 ```
 
