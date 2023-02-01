@@ -4,9 +4,9 @@ This repository includes adapters for [React](https://reactjs.org/) / [Binding.s
 
 ## Motivation
 
-The rendering process in React components are unpredictable, resulting in unnecessary reevaluation, and even worse, unexpected reevaluation of side effects if any. Precise data-binding in [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala) is a faster and predictable alternative to React's repeatedly re-rendering approach.
+The rendering process in React components are unpredictable, resulting in unnecessary reevaluation, and even worse, unexpected reevaluation of side effects if any. Precise data-binding in [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala) is a fast and predictable alternative to React's repeatedly re-rendering approach.
 
-However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while take the advantage from Binding.scala's precise data-binding. This repository includes the following libraries to reuse React components in a Binding.scala + html.scala web app:
+However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while take the advantage from Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
 
 - [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for using a React component inside an [html.scala](https://github.com/Atry/html.scala) literal or interpolation.
 - [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for using an [html.scala](https://github.com/Atry/html.scala) literal or interpolation inside a React component.
@@ -15,6 +15,7 @@ However, currently there are more third-party components in the React ecosystem 
 ## Getting Started
 
 ```sbt
+// build.sbt
 libraryDependencies ++= Seq(
   "com.yang-bo" %%% "html" % (if (scalaBinaryVersion.value == "3") "3+" else "2+"),
   "com.yang-bo" %%% "bindingreacttoreact" % "latest.release",
