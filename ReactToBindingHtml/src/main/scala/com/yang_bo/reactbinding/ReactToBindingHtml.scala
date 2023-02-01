@@ -42,18 +42,26 @@ final class ReactToBindingHtml[WrapperElement <: Element](
 }
 
 object ReactToBindingHtml {
-  object Implicits {
-    implicit val reactElementBindable: Bindable.Aux[ReactElement, Element]
-      with BindableSeq.Aux[ReactElement, Element] = new Bindable[ReactElement]
-      with BindableSeq[ReactElement] {
-      type Value = Element
+  private[ReactToBindingHtml] trait LowPriorityImplicits1024 {}
 
-      def toBinding(from: ReactElement): Binding[Value] =
-        new ReactToBindingHtml(from, document.createElement("span"))
+  object Implicits
+      extends ReactToBindingHtmlImplicits2Or3
+      with LowPriorityImplicits1024 {
+    implicit def reactElementBindable[From](implicit
+        toReactElement: From => ReactElement
+    ): Bindable.Aux[From, Element] with BindableSeq.Aux[From, Element] =
+      new Bindable[From] with BindableSeq[From] {
+        type Value = Element
 
-      def toBindingSeq(
-          from: ReactElement
-      ): BindingSeq[Value] = Binding.SingletonBindingSeq(toBinding(from))
-    }
+        def toBinding(from: From): Binding[Value] =
+          new ReactToBindingHtml(
+            toReactElement(from),
+            document.createElement("span")
+          )
+
+        def toBindingSeq(
+            from: From
+        ): BindingSeq[Value] = Binding.SingletonBindingSeq(toBinding(from))
+      }
   }
 }

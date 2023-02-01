@@ -8,13 +8,14 @@ import scala.language.implicitConversions
 import scala.scalajs.js
 
 import com.yang_bo.reactbinding.BindingReactToReact
+
 /** A React component backed by a `Binding[ReactElement]`.
   *
   * @example
-  *   With the help of [[Implicits]],
-  *   [[com.thoughtworks.binding.Binding]] can be used as a React element. The
-  *   following code create a spinner, which includes a label whose value is
-  *   automatically updated according to `currentNumber`:
+  *   With the help of [[Implicits]], [[com.thoughtworks.binding.Binding]] can
+  *   be used as a React element. The following code create a spinner, which
+  *   includes a label whose value is automatically updated according to
+  *   `currentNumber`:
   *   {{{
   *   import com.thoughtworks.binding.Binding
   *   import com.thoughtworks.binding.Binding.Var
@@ -38,9 +39,9 @@ import com.yang_bo.reactbinding.BindingReactToReact
   *     )
   *   }
   *   }}}
-  *   The component can be rendered and can respond to UI events
+  *   The component can be [[slinky.web.ReactDOM.render render]]ed into the HTML
+  *   document,
   *   {{{
-  *
   *   import slinky.web.ReactDOM
   *   import slinky.testrenderer.TestRenderer
   *   import org.scalajs.dom._
@@ -53,12 +54,18 @@ import com.yang_bo.reactbinding.BindingReactToReact
   *   document.body.innerHTML should be(
   *     """<span><button id="minus">-</button><label>50</label><button id="plus">+</button></span>"""
   *   )
-  *
+  *   }}}
+  *   and it can respond to UI events:
+  *   {{{
   *   TestRenderer.act { () =>
-  *     document.getElementById("minus").dispatchEvent(new Event("click", new EventInit {
-  *       bubbles = true
-  *       cancelable = true
-  *     }))
+  *     document
+  *       .getElementById("minus")
+  *       .dispatchEvent(
+  *         new MouseEvent("click", new MouseEventInit {
+  *           bubbles = true
+  *           cancelable = true
+  *         })
+  *       )
   *   }
   *   currentNumber.value should be(49)
   *   document.body.innerHTML should be(

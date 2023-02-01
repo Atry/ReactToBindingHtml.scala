@@ -6,7 +6,7 @@ lazy val BindingReactToReact = project
 
 lazy val BindingHtmlToReact = project.dependsOn(HtmlMountPoint)
 
-lazy val ReactToBindingHtml = project
+lazy val ReactToBindingHtml = project.dependsOn(BindingReactToReact % Test)
 
 publish / skip := true
 

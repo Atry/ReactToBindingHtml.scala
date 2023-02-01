@@ -10,8 +10,8 @@ private[reactbinding] trait BindingHtmlToReactImplicits2Or3 {
   /** Implicitly convents a Binding.scala HTML template as a React component.
     * @note the code examples in the Scaladoc is for Scala 3 only
     * @example
-    *   The following code create a spinner from the `html"..."` interpolation
-    *   provided by [[com.yang_bo.html.html]]:
+    *   The following code creates a spinner from the `html"..."` interpolation
+    *   provided by [[com.yang_bo.html]]:
     *   {{{
     *   import com.thoughtworks.binding.Binding
     *   import com.thoughtworks.binding.Binding.Var
