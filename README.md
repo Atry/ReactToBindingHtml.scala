@@ -14,7 +14,7 @@ The rendering process in React components is unpredictable, resulting in unneces
 However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while taking advantage of Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
 
 - [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for inserting React virtual DOM into an `@html` literal or an `html"..."` interpolation.
-- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an `@html` literal or an `html"..."` interpolation into a React component.
+- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an `@html` literal or an `html"..."` interpolation into React virtual DOM.
 - [BindingReactToReact](https://www.javadoc.io/page/com.yang-bo/bindingreacttoreact_sjs1_3/latest/com/yang_bo/BindingReactToReact$.html) - an adapter for using [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala)'s `.bind` data-binding in React virtual DOM.
 
 With the help of the adapters, you will be able to reuse existing React components while getting rid of React hooks or `setState` by managing your app's states in Binding.scala.
@@ -147,7 +147,7 @@ render(documet.body, rootView)
 
 Even though adapters from this repository provide the flexibility to choose to create UI in either React or real DOM, to minimize the cost due to React rerendering, `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, to take the advantage of Binding.scala's precise data-binding, manage the application states in Binding.scala, and let the `BindingReactToReact` React components be instantiated implicitly, when using existing React components.
 
-Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
+Because React virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
 
 ## Related tools
 
