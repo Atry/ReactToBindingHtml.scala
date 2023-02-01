@@ -7,6 +7,7 @@ import slinky.core.facade._
 import scala.language.implicitConversions
 import scala.scalajs.js
 
+import com.yang_bo.reactbinding.BindingReactToReact
 /** A React component backed by a `Binding[ReactElement]`.
   *
   * @example
@@ -19,7 +20,6 @@ import scala.scalajs.js
   *   import com.thoughtworks.binding.Binding.Var
   *   import com.yang_bo.reactbinding.BindingReactToReact.Implicits._
   *   import slinky.web.html._
-  *   import slinky.core.facade._
   *
   *   def spinner(currentNumber: Var[Int]) = {
   *     span(
@@ -38,7 +38,7 @@ import scala.scalajs.js
   *     )
   *   }
   *   }}}
-  *   The component can be rendered and respond to UI events
+  *   The component can be rendered and can respond to UI events
   *   {{{
   *
   *   import slinky.web.ReactDOM

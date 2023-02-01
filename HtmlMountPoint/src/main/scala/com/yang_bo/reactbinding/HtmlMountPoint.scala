@@ -1,12 +1,12 @@
 package com.yang_bo.reactbinding
 import com.thoughtworks.binding.Binding
-import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.Binding.BindingSeq
+import com.thoughtworks.binding.Binding.Var
 import org.scalajs.dom._
 import org.scalajs.dom.raw._
 
-import scala.scalajs.js
 import scala.annotation.tailrec
+import scala.scalajs.js
 
 private[reactbinding] object HtmlMountPoint {
   @inline
@@ -40,7 +40,11 @@ final class HtmlMountPoint(
     }
   }
 
-  protected def splice(from: Int, that: Iterable[Node], replaced: Int): Unit = {
+  protected def splice(
+      from: Int,
+      that: Iterable[Node],
+      replaced: Int
+  ): Unit = {
     spliceGenIterable(from, that, replaced)
   }
 

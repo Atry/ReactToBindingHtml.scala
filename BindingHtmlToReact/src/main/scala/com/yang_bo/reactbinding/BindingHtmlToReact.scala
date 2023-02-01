@@ -16,6 +16,13 @@ import scala.language.implicitConversions
 import scala.scalajs.js
 import scala.annotation.tailrec
 
+/** A React component backed by an HTML template created from
+  * [[https://github.com/ThoughtWorksInc/Binding.scala Binding.scala]] and
+  * [[https://github.com/Atry/html.scala html.scala]].
+  * @see
+  *   [[Implicits.bindingSeqToReactElement]] for using HTML templates in React
+  *   components.
+  */
 object BindingHtmlToReact extends ComponentWrapper {
   final case class Props(
       bindingSeq: BindingSeq[Node],
@@ -64,7 +71,10 @@ object BindingHtmlToReact extends ComponentWrapper {
       )
   }
 
-  object Implicits extends LowPriorityImplicits1024 {
+  object Implicits
+      extends LowPriorityImplicits1024
+      with BindingHtmlToReactImplicits2Or3 {
+
     @inline implicit def bindingSeqToReactElement(
         bindingSeq: BindingSeq[Node]
     ): ReactElement =
