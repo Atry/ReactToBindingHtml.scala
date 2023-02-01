@@ -40,16 +40,18 @@ object BindingHtmlToReact extends ComponentWrapper {
       }
     }
 
-    def current_=(wrapperElement: Element): Unit = {
+    def setter: js.Function1[Element, Unit] = { wrapperElement =>
       wrapperVar.value = Some(wrapperElement)
     }
+
     def initialState = ()
 
     def render() =
-      props.wrapper(this.asInstanceOf[ReactRef[Node with ParentNode]])
-    override def componentWillMount(): Unit = {
+      props.wrapper(setter.asInstanceOf[ReactRef[Node with ParentNode]])
+
+    override def componentDidMount(): Unit = {
+      super.componentDidMount()
       mountPoint.watch()
-      super.componentWillMount()
     }
 
     override def componentWillUnmount(): Unit = {

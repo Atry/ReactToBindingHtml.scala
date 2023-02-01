@@ -85,9 +85,9 @@ object BindingReactToReact extends ComponentWrapper {
 
     def render(): ReactElement = state
 
-    override def componentWillMount(): Unit = {
+    override def componentDidMount(): Unit = {
+      super.componentDidMount()
       setterBinding.watch()
-      super.componentWillMount()
     }
 
     override def componentWillUnmount(): Unit = {
