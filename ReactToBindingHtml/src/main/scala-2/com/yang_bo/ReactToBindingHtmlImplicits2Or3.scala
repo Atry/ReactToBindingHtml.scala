@@ -57,6 +57,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer
     *   import org.scalajs.dom._
+    *   import org.scalajs.dom.raw._
     *   TestRenderer.act { () =>
     *     html.render(document.body, bindingHtmlRoot)
     *   }

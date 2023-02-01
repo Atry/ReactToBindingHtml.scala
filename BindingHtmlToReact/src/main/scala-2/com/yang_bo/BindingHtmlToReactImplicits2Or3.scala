@@ -16,6 +16,7 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *   import com.thoughtworks.binding.Binding.Var
     *   import org.lrng.binding.html
     *   import org.scalajs.dom._
+    *   import org.scalajs.dom.raw._
     *
     *   @html def spinner(currentNumber: Var[Int]) = {
     *     <button
