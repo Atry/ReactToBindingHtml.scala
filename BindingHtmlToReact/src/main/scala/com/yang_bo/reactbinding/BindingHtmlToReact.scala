@@ -20,7 +20,7 @@ import scala.annotation.tailrec
   * [[https://github.com/ThoughtWorksInc/Binding.scala Binding.scala]] and
   * [[https://github.com/Atry/html.scala html.scala]].
   * @see
-  *   [[Implicits.bindingSeqToReactElement]] for using HTML templates in React
+  *   [[Implicits.bindingSeqToReactElement]] for using Binding.scala HTML templates in React
   *   components.
   */
 object BindingHtmlToReact extends ComponentWrapper {

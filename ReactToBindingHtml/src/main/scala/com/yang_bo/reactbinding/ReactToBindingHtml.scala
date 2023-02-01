@@ -12,6 +12,14 @@ import slinky.core.facade._
 import scala.scalajs.js
 import slinky.web.ReactDOM
 
+/** The [[https://github.com/ThoughtWorksInc/Binding.scala/ Binding.scala]]
+  * wrapper of React virtual DOM element.
+  *
+  * @see
+  *   [[ReactToBindingHtml.Implicits.reactElementBindable]] for using React
+  *   virtual DOM in [[https://github.com/Atry/html.scala html.scala]]
+  *   templates.
+  */
 final class ReactToBindingHtml[WrapperElement <: Element](
     reactElement: ReactElement,
     wrapperElement: WrapperElement
