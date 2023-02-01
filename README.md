@@ -17,6 +17,8 @@ However, currently there are more third-party components in the React ecosystem 
 - [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an `@html` literal or an `html"..."` interpolation into a React component.
 - [BindingReactToReact](https://www.javadoc.io/page/com.yang-bo/bindingreacttoreact_sjs1_3/latest/com/yang_bo/BindingReactToReact$.html) - an adapter for using [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala)'s `.bind` data-binding in React virtual DOM.
 
+With the help of the adapters, you will be able to reuse existing React components while getting rid of React hooks or `setState` by managing your app's states in Binding.scala.
+
 ## Getting Started
 
 ```sbt
