@@ -46,18 +46,18 @@ import slinky.core.facade._
 @html def spinner(currentNumber: Var[Int]): ReactElement = {
   // virtual DOM span element
   span(
-    
+
     // real DOM button element
     <button
       id="minus"
       onclick={ (event: MouseEvent) => currentNumber.value -= 1 }
     ></button>,
-    
+
     // virtual DOM label element with Binding.scala's `.bind` magic
     Binding {
       label(currentNumber.bind.toString)
     },
-    
+
     // virtual DOM button element
     button(
       id := "plus",
@@ -80,7 +80,7 @@ val currentNumber = Var(50)
       I am an `@html` literal that contains a React component
     </legend>
     { spinner(currentNumber) }
-  </fieldset> 
+  </fieldset>
 }
 
 html.render(documet.body, rootView)
@@ -103,18 +103,18 @@ import slinky.core.facade._
 def spinner(currentNumber: Var[Int]): ReactElement = {
   // virtual DOM span element
   span(
-    
+
     // real DOM button element
     html"""<button
       id="minus"
       onclick=${ (event: MouseEvent) => currentNumber.value -= 1 }
     ></button>""",
-    
+
     // virtual DOM label element with Binding.scala's `.bind` magic
     Binding {
       label(currentNumber.bind.toString)
     },
-    
+
     // virtual DOM button element
     button(
       id := "plus",
@@ -143,7 +143,7 @@ val rootView = {
 render(documet.body, rootView)
 ```
 
-Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters. 
+Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters.
 
 ## Related tools
 
