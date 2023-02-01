@@ -7,9 +7,9 @@ This repository includes adapters for [React](https://reactjs.org/) / [Binding.s
 
 ## Motivation
 
-The rendering process in React components are unpredictable, resulting in unnecessary reevaluation, and even worse, unexpected reevaluation of side effects if any. Precise data-binding in [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala) is a fast and predictable alternative to React's repeatedly re-rendering approach.
+The rendering process in React components is unpredictable, resulting in unnecessary reevaluation and, even worse, unexpected reevaluation of side effects, if any. Precise data-binding in [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala) is a fast and predictable alternative to React's repeatedly re-rendering approach.
 
-However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while take the advantage from Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
+However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while taking advantage of Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
 
 - [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for inserting React virtual DOM into an `@html` literal or an `html"..."` interpolation.
 - [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an `@html` literal or an `html"..."` interpolation into a React component.
@@ -141,11 +141,11 @@ val rootView = {
 render(documet.body, rootView)
 ```
 
-Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters. 
+Note that `BindingReactToReact` users are recommended to neither define any React components nor use any React hooks. Instead, the application states can be managed by Binding.scala, and the `BindingReactToReact` React components are instantiated implicitly, when using existing React components. Because React's virtual DOM does not support partial update provided by Binding.scala's `BindingSeq`, create your own HTML UI as `@html` literals or `html"..."` interpolations, if the overhead due to React's virtual DOM differentiation matters. 
 
 ## Related tools
 
-These adapters works with React types defined in [Slinky](https://slinky.dev/) by default. Other source of React components needs to be converted to Slinky types first.
+These adapters work with React types defined in [Slinky](https://slinky.dev/) by default. Other sources of React components need to be converted to Slinky types first.
 
 - React components defined in [scalajs-react](https://github.com/japgolly/scalajs-react) can be converted into Slinky types via [toSlinky](https://slinky.dev/docs/scalajs-react-interop), in order to use them in Binding.scala apps with the help of adapters from this repository.
 - React components defined in TypeScript can be converted to Slinky types via [ScalablyTyped](https://scalablytyped.org/) with [Flavour.Slinky](https://scalablytyped.org/docs/flavour), in order to use them in Binding.scala apps with the help of adapters from this repository.
