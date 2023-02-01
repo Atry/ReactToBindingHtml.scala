@@ -1,6 +1,8 @@
 # React / Binding.scala / html.scala Interoperability
 [![Scala CI](https://github.com/Atry/ReactToBindingHtml.scala/actions/workflows/scala.yml/badge.svg)](https://github.com/Atry/ReactToBindingHtml.scala/actions/workflows/scala.yml)
-[![Scala version support](https://index.scala-lang.org/atry/reacttobindinghtml.scala/reacttobindinghtml/latest.svg)](https://index.scala-lang.org/atry/reacttobindinghtml.scala/reacttobindinghtml)
+[![reacttobindinghtml Scala version support](https://index.scala-lang.org/atry/reacttobindinghtml.scala/reacttobindinghtml/latest.svg)](https://index.scala-lang.org/atry/reacttobindinghtml.scala/reacttobindinghtml)
+[![bindinghtmltoreact Scala version support](https://index.scala-lang.org/atry/reacttobindinghtml.scala/bindinghtmltoreact/latest.svg)](https://index.scala-lang.org/atry/reacttobindinghtml.scala/bindinghtmltoreact)
+[![bindingreacttoreact Scala version support](https://index.scala-lang.org/atry/reacttobindinghtml.scala/bindingreacttoreact/latest.svg)](https://index.scala-lang.org/atry/reacttobindinghtml.scala/bindingreacttoreact)
 [![Scaladoc](https://javadoc.io/badge/com.yang-bo/reacttobindinghtml_sjs1_3.svg?label=Scaladoc)](https://javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo.html)
 
 This repository includes adapters for [React](https://reactjs.org/) / [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala/) / [html.scala](https://github.com/Atry/html.scala) interoperability.
