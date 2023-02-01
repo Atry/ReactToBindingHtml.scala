@@ -11,8 +11,8 @@ The rendering process in React components are unpredictable, resulting in unnece
 
 However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while take the advantage from Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
 
-- [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for inserting React virtual DOM into an [html.scala](https://github.com/Atry/html.scala) `@html` literal or an `html"..."` interpolation.
-- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an [html.scala](https://github.com/Atry/html.scala) `@html` literal or an `html"..."` interpolation into a React component.
+- [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for inserting React virtual DOM into an `@html` literal or an `html"..."` interpolation.
+- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an `@html` literal or an `html"..."` interpolation into a React component.
 - [BindingReactToReact](https://www.javadoc.io/page/com.yang-bo/bindingreacttoreact_sjs1_3/latest/com/yang_bo/BindingReactToReact$.html) - an adapter for inserting [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala)'s `.bind` data-binding into React virtual DOM.
 
 ## Getting Started
