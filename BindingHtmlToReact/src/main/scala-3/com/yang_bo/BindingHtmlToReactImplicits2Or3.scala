@@ -6,8 +6,10 @@ import slinky.core.facade.*
 
 private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
 
-  /** Implicitly convents a Binding.scala HTML template as a React component.
-    * @note the code examples in the Scaladoc is for Scala 3 only
+  /** Implicitly convents an [[https://github.com/Atry/html.scala html.scala]]
+    * component into a React component.
+    * @note
+    *   the code examples in the Scaladoc is for Scala 3 only
     * @example
     *   The following code creates a spinner from the `html"..."` interpolation
     *   provided by [[com.yang_bo.html]]:

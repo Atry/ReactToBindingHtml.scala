@@ -7,8 +7,8 @@ import slinky.core.facade._
 
 private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
 
-  /** The implicit convention to treat a Binding.scala HTML template as a React
-    * component.
+  /** Implicitly convents an [[https://github.com/Atry/html.scala html.scala]]
+    * node sequence into a React component.
     * 
     * @todo examples for Scala 2
     */

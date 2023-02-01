@@ -9,7 +9,8 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
   /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows
-    * for using React component in a Binding.scala HTML template.
+    * for using a React component inside an
+    * [[https://github.com/Atry/html.scala html.scala]] literal / interpolation.
     * @note
     *   the code examples in the Scaladoc is for Scala 3 only
     * @example
@@ -46,7 +47,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   import com.yang_bo.html.*
     *   val currentNumber = Var(50)
     *   def bindingHtmlRoot = html"""<fieldset>
-    *     <legend>I am a React component that contains an HTML interpolation</legend>
+    *     <legend>I am an HTML interpolation that contains a React component</legend>
     *     ${spinner(currentNumber)}
     *   </fieldset>"""
     *   }}}
@@ -62,7 +63,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   currentNumber.value should be(50)
     *   document.body.innerHTML should be(
     *     """<fieldset>
-    *     <legend>I am a React component that contains an HTML interpolation</legend>
+    *     <legend>I am an HTML interpolation that contains a React component</legend>
     *     <span><span><button id="minus">-</button><label>50</label><button id="plus">+</button></span></span>
     *     </fieldset>"""
     *   )
@@ -82,7 +83,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   currentNumber.value should be(49)
     *   document.body.innerHTML should be(
     *     """<fieldset>
-    *     <legend>I am a React component that contains an HTML interpolation</legend>
+    *     <legend>I am an HTML interpolation that contains a React component</legend>
     *     <span><span><button id="minus">-</button><label>49</label><button id="plus">+</button></span></span>
     *     </fieldset>"""
     *   )

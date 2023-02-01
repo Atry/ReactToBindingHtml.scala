@@ -10,7 +10,8 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
   /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows
-    * for using React component in a Binding.scala HTML template.
+    * for using a React component inside an
+    * [[https://github.com/Atry/html.scala html.scala]] literal / interpolation.
     *
     * @todo
     *   examples for Scala 2
