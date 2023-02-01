@@ -147,8 +147,8 @@ Note that `BindingReactToReact` users are recommended to neither define any Reac
 
 These adapters works with React types defined in [Slinky](https://slinky.dev/) by default. Other source of React components needs to be converted to Slinky types first.
 
-- React components defined in [scalajs-react](https://github.com/japgolly/scalajs-react) can be converted into Slinky types via [toSlinky](https://slinky.dev/docs/scalajs-react-interop), then used in Binding.scala apps with the help of adapters from this repository.
-- React components defined in TypeScript can be converted to Slinky types via [ScalablyTyped](https://scalablytyped.org/) with [Flavour.Slinky](https://scalablytyped.org/docs/flavour), then used in Binding.scala apps with the help of adapters from this repository.
+- React components defined in [scalajs-react](https://github.com/japgolly/scalajs-react) can be converted into Slinky types via [toSlinky](https://slinky.dev/docs/scalajs-react-interop), in order to use them in Binding.scala apps with the help of adapters from this repository.
+- React components defined in TypeScript can be converted to Slinky types via [ScalablyTyped](https://scalablytyped.org/) with [Flavour.Slinky](https://scalablytyped.org/docs/flavour), in order to use them in Binding.scala apps with the help of adapters from this repository.
 
 ## Links
 
