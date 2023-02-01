@@ -10,9 +10,10 @@ import scala.scalajs.js
 /** A React component backed by a `Binding[ReactElement]`.
   *
   * @example
-  *   With the help of [[Implicits]], [[com.thoughtworks.binding.Binding]] can
-  *   be used as a React element. The following code create a spinner, which
-  *   includes a label whose value is automatically updated according to
+  *   With the help of [[BindingReactToReact.Implicits]],
+  *   [[com.thoughtworks.binding.Binding Binding]] can be used in a React
+  *   virtual DOM. The following code create a spinner, which includes a label
+  *   whose value is automatically updated according to the change of
   *   `currentNumber`:
   *   {{{
   *   import com.thoughtworks.binding.Binding
@@ -37,8 +38,8 @@ import scala.scalajs.js
   *     )
   *   }
   *   }}}
-  *   The component can be [[slinky.web.ReactDOM.render render]]ed into the HTML
-  *   document,
+  *   The React virtual DOM tree can be [[slinky.web.ReactDOM.render render]]ed
+  *   into the html document,
   *   {{{
   *   import slinky.web.ReactDOM
   *   import slinky.testrenderer.TestRenderer

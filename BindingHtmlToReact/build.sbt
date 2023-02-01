@@ -53,3 +53,9 @@ scalacOptions ++= PartialFunction.condOpt(
 ) { case true =>
   "-P:scalajs:sjsDefinedByDefault"
 }
+
+scalacOptions ++= PartialFunction.condOpt(
+  scalaBinaryVersion.value
+) { case "2.13" =>
+  "-Ymacro-annotations"
+}

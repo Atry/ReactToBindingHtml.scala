@@ -11,9 +11,9 @@ The rendering process in React components are unpredictable, resulting in unnece
 
 However, currently there are more third-party components in the React ecosystem than Binding.scala. It would be nice if a web developer could reuse React components while take the advantage from Binding.scala's precise data-binding. This repository includes the following adapters for reusing React components in Binding.scala + html.scala web apps:
 
-- [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for using a React component inside an [html.scala](https://github.com/Atry/html.scala) literal or interpolation.
-- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for using an [html.scala](https://github.com/Atry/html.scala) literal or interpolation inside a React component.
-- [BindingReactToReact](https://www.javadoc.io/page/com.yang-bo/bindingreacttoreact_sjs1_3/latest/com/yang_bo/BindingReactToReact$.html) - an adapter for using [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala)'s `.bind` data-binding in React virtual DOM.
+- [ReactToBindingHtml](https://www.javadoc.io/page/com.yang-bo/reacttobindinghtml_sjs1_3/latest/com/yang_bo/ReactToBindingHtml.html) - an adapter for inserting React virtual DOM into an [html.scala](https://github.com/Atry/html.scala) `@html` literal or an `html"..."` interpolation.
+- [BindingHtmlToReact](https://www.javadoc.io/page/com.yang-bo/bindinghtmltoreact_sjs1_3/latest/com/yang_bo/BindingHtmlToReact$.html) - an adapter for inserting an [html.scala](https://github.com/Atry/html.scala) `@html` literal or an `html"..."` interpolation into a React component.
+- [BindingReactToReact](https://www.javadoc.io/page/com.yang-bo/bindingreacttoreact_sjs1_3/latest/com/yang_bo/BindingReactToReact$.html) - an adapter for inserting [Binding.scala](https://github.com/ThoughtWorksInc/Binding.scala)'s `.bind` data-binding into React virtual DOM.
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-The following example demonstrates how to using React components with [html.scala](https://github.com/Atry/html.scala) literal in Scala 2
+The following example demonstrates how to using React components with [html.scala](https://github.com/Atry/html.scala)'s `@html` literal in Scala 2
 
 ```scala
 import com.thoughtworks.binding.Binding
@@ -75,7 +75,7 @@ val currentNumber = Var(50)
   // real DOM fieldset element
   <fieldset>
     <legend>
-      I am an HTML interpolation that contains a React component
+      I am an `@html` literal that contains a React component
     </legend>
     { spinner(currentNumber) }
   </fieldset> 
@@ -84,7 +84,7 @@ val currentNumber = Var(50)
 html.render(documet.body, rootView)
 ```
 
-For Scala 3 users, use [html.scala](https://github.com/Atry/html.scala) interpolation instead, as shown below:
+For Scala 3 users, use [html.scala](https://github.com/Atry/html.scala)'s `html"..."` interpolation instead, as shown below:
 
 ```scala
 import com.thoughtworks.binding.Binding
@@ -132,7 +132,7 @@ val rootView = {
   // real DOM fieldset element
   html"""<fieldset>
     <legend>
-      I am an HTML interpolation that contains a React component
+      I am an html interpolation that contains a React component
     </legend>
     ${ spinner(currentNumber) }
   </fieldset>"""

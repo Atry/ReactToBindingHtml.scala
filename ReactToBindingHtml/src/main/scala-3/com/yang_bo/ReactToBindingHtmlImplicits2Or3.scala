@@ -7,16 +7,14 @@ import slinky.core.facade.*
 
 private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
-  /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
-    * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows
-    * for using a React component inside an
-    * [[https://github.com/Atry/html.scala html.scala]] literal / interpolation.
-    * @note
-    *   the code examples in the Scaladoc is for Scala 3 only
+  /** Provides the [[com.thoughtworks.binding.bindable.Bindable Bindable]] and
+    * [[com.thoughtworks.binding.bindable.BindableSeq BindableSeq]] instances
+    * that allow for inserting React virtual DOM into an `html"..."`
+    * interpolation.
     * @example
-    *   The following code creates a spinner React component. With the help of
-    *   [[BindingReactToReact.Implicits]], the component use a state stored in a
-    *   [[com.thoughtworks.binding.Binding.Var]]:
+    *   The following code creates a React virtual DOM tree of a spinner. With
+    *   the help of [[BindingReactToReact.Implicits]], it can use states stored
+    *   in [[com.thoughtworks.binding.Binding.Var Binding.Var]]s:
     *   {{{
     *   import com.thoughtworks.binding.Binding
     *   import com.thoughtworks.binding.Binding.Var
@@ -40,19 +38,19 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *     )
     *   }
     *   }}}
-    *   The React component can be used in a HTML interpolation with the help of
-    *   [[ReactToBindingHtml.Implicits]]:
+    *   The virtual DOM can be inserted into a `html"..."` interpolation with
+    *   the help of [[ReactToBindingHtml.Implicits]]:
     *   {{{
     *   import com.yang_bo.ReactToBindingHtml.Implicits.*
     *   import com.yang_bo.html.*
     *   val currentNumber = Var(50)
     *   def bindingHtmlRoot = html"""<fieldset>
-    *     <legend>I am an HTML interpolation that contains a React component</legend>
+    *     <legend>I am an `html"..."` interpolation that contains a React component</legend>
     *     ${spinner(currentNumber)}
     *   </fieldset>"""
     *   }}}
-    *   Then, the component can be [[com.yang_bo.html render]]ed into the HTML
-    *   document,
+    *   Then, the `html"..."` interpolation can be
+    *   [[com.yang_bo.html#render render]]ed into the html document,
     *   {{{
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer
@@ -63,12 +61,12 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   currentNumber.value should be(50)
     *   document.body.innerHTML should be(
     *     """<fieldset>
-    *     <legend>I am an HTML interpolation that contains a React component</legend>
+    *     <legend>I am an `html"..."` interpolation that contains a React component</legend>
     *     <span><span><button id="minus">-</button><label>50</label><button id="plus">+</button></span></span>
     *     </fieldset>"""
     *   )
     *   }}}
-    *   And, the component can respond to UI events
+    *   and it can respond to UI events
     *   {{{
     *   TestRenderer.act { () =>
     *     document
@@ -83,7 +81,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *   currentNumber.value should be(49)
     *   document.body.innerHTML should be(
     *     """<fieldset>
-    *     <legend>I am an HTML interpolation that contains a React component</legend>
+    *     <legend>I am an `html"..."` interpolation that contains a React component</legend>
     *     <span><span><button id="minus">-</button><label>49</label><button id="plus">+</button></span></span>
     *     </fieldset>"""
     *   )

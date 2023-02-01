@@ -16,9 +16,8 @@ import slinky.web.ReactDOM
   * element that wraps a React component.
   *
   * @see
-  *   [[ReactToBindingHtml.Implicits.reactElementBindable]] for using a React
-  *   component inside a [[https://github.com/Atry/html.scala html.scala]]
-  *   literal / interpolation.
+  *   [[ReactToBindingHtml.Implicits.reactElementBindable]] for inserting a
+  *   React component into an `@html` literal or an `html"..."` interpolation.
   */
 final class ReactToBindingHtml[WrapperElement <: Element](
     reactElement: ReactElement,

@@ -6,10 +6,7 @@ import slinky.core.facade.*
 
 private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
 
-  /** Implicitly convents an [[https://github.com/Atry/html.scala html.scala]]
-    * component into a React component.
-    * @note
-    *   the code examples in the Scaladoc is for Scala 3 only
+  /** Implicitly convents an `html"..."` interpolation into a React component.
     * @example
     *   The following code creates a spinner from the `html"..."` interpolation
     *   provided by [[com.yang_bo.html]]:
@@ -31,18 +28,19 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *     >+</button>
     *   """
     *   }}}
-    *   The HTML interpolation can be then used as a React component with the
-    *   help of [[BindingHtmlToReact.Implicits]]:
+    *   The `html"..."` interpolation can be then used as a React component with
+    *   the help of [[BindingHtmlToReact.Implicits]]:
     *   {{{
     *   import com.yang_bo.BindingHtmlToReact.Implicits.*
     *   import slinky.web.html.*
     *   val currentNumber = Var(50)
     *   def reactRoot = fieldset(
-    *     legend("I am a React component that contains an HTML interpolation"),
+    *     legend("I am a React component that contains an  html interpolation"),
     *     spinner(currentNumber)
     *   )
     *   }}}
-    *   Then, the component can be rendered.
+    *   Then, the `html"..."` interpolation can be
+    *   [[com.yang_bo.html.render render]]ed into the html document,
     *   {{{
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer
@@ -52,14 +50,14 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *   }
     *   currentNumber.value should be(50)
     *   document.body.innerHTML should be(
-    *     """<fieldset><legend>I am a React component that contains an HTML interpolation</legend><span>
+    *     """<fieldset><legend>I am a React component that contains an  html interpolation</legend><span>
     *     <button id="minus">-</button>
     *     <label>50</label>
     *     <button id="plus">+</button>
     *     </span></fieldset>"""
     *   )
     *   }}}
-    *   And, the component can respond to UI events
+    *   and, the `html"..."` interpolation can respond to UI events
     *   {{{
     *   document
     *     .getElementById("minus")
@@ -72,7 +70,7 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *     )
     *   currentNumber.value should be(49)
     *   document.body.innerHTML should be(
-    *     """<fieldset><legend>I am a React component that contains an HTML interpolation</legend><span>
+    *     """<fieldset><legend>I am a React component that contains an  html interpolation</legend><span>
     *     <button id="minus">-</button>
     *     <label>49</label>
     *     <button id="plus">+</button>

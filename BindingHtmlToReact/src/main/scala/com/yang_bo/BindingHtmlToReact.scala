@@ -19,9 +19,8 @@ import scala.annotation.tailrec
 /** A React component that wraps an
   * [[https://github.com/Atry/html.scala html.scala]] node sequence.
   * @see
-  *   [[Implicits.bindingSeqToReactElement]] for using an
-  *   [[https://github.com/Atry/html.scala html.scala]] literal / interpolation
-  *   inside a React component.
+  *   [[Implicits.bindingSeqToReactElement]] for inserting an `@html` literal or
+  *   `html"..."` interpolation into React virtual DOM.
   */
 object BindingHtmlToReact extends ComponentWrapper {
   final case class Props(
