@@ -1,11 +1,11 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding.BindingSeq
 import org.scalajs.dom._
 import org.scalajs.dom.raw._
 import slinky.core.facade._
 
-private[reactbinding] trait BindingHtmlToReactImplicits2Or3 {
+private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
 
   /** The implicit convention to treat a Binding.scala HTML template as a React
     * component.

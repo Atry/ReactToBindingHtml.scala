@@ -1,4 +1,4 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding
 import slinky.core._
@@ -7,7 +7,7 @@ import slinky.core.facade._
 import scala.language.implicitConversions
 import scala.scalajs.js
 
-import com.yang_bo.reactbinding.BindingReactToReact
+import com.yang_bo.BindingReactToReact
 
 /** A React component backed by a `Binding[ReactElement]`.
   *
@@ -19,7 +19,7 @@ import com.yang_bo.reactbinding.BindingReactToReact
   *   {{{
   *   import com.thoughtworks.binding.Binding
   *   import com.thoughtworks.binding.Binding.Var
-  *   import com.yang_bo.reactbinding.BindingReactToReact.Implicits._
+  *   import com.yang_bo.BindingReactToReact.Implicits._
   *   import slinky.web.html._
   *
   *   def spinner(currentNumber: Var[Int]) = {

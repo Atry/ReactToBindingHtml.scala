@@ -1,4 +1,4 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding
 import com.thoughtworks.binding.Binding.BindingSeq

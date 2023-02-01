@@ -1,11 +1,11 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding.BindingSeq
 import com.thoughtworks.binding.bindable.*
 import org.scalajs.dom.*
 import slinky.core.facade.*
 
-private[reactbinding] trait ReactToBindingHtmlImplicits2Or3 {
+private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
   /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows
@@ -19,7 +19,7 @@ private[reactbinding] trait ReactToBindingHtmlImplicits2Or3 {
     *   {{{
     *   import com.thoughtworks.binding.Binding
     *   import com.thoughtworks.binding.Binding.Var
-    *   import com.yang_bo.reactbinding.BindingReactToReact.Implicits._
+    *   import com.yang_bo.BindingReactToReact.Implicits._
     *   import slinky.web.html._
     *
     *   def spinner(currentNumber: Var[Int]) = {
@@ -42,7 +42,7 @@ private[reactbinding] trait ReactToBindingHtmlImplicits2Or3 {
     *   The React component can be used in a HTML interpolation with the help of
     *   [[ReactToBindingHtml.Implicits]]:
     *   {{{
-    *   import com.yang_bo.reactbinding.ReactToBindingHtml.Implicits.*
+    *   import com.yang_bo.ReactToBindingHtml.Implicits.*
     *   import com.yang_bo.html.*
     *   val currentNumber = Var(50)
     *   def bindingHtmlRoot = html"""<fieldset>

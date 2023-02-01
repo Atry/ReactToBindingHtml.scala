@@ -1,4 +1,4 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding.BindingSeq
 import com.thoughtworks.binding.bindable._
@@ -6,7 +6,7 @@ import org.scalajs.dom._
 import org.scalajs.dom.raw._
 import slinky.core.facade._
 
-private[reactbinding] trait ReactToBindingHtmlImplicits2Or3 {
+private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
   /** Implicitly returns the [[com.thoughtworks.binding.bindable.Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq]] instances, which allows

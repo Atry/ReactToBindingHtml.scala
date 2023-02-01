@@ -1,4 +1,4 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 import com.thoughtworks.binding.Binding
 import com.thoughtworks.binding.Binding.BindingSeq
 import com.thoughtworks.binding.Binding.Var
@@ -8,7 +8,7 @@ import org.scalajs.dom.raw._
 import scala.annotation.tailrec
 import scala.scalajs.js
 
-private[reactbinding] object HtmlMountPoint {
+private[yang_bo] object HtmlMountPoint {
   @inline
   @tailrec
   def removeAll(parent: Node): Unit = {

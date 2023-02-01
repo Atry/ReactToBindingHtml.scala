@@ -1,10 +1,10 @@
-package com.yang_bo.reactbinding
+package com.yang_bo
 
 import com.thoughtworks.binding.Binding.BindingSeq
 import org.scalajs.dom.*
 import slinky.core.facade.*
 
-private[reactbinding] trait BindingHtmlToReactImplicits2Or3 {
+private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
 
   /** Implicitly convents a Binding.scala HTML template as a React component.
     * @note the code examples in the Scaladoc is for Scala 3 only
@@ -32,7 +32,7 @@ private[reactbinding] trait BindingHtmlToReactImplicits2Or3 {
     *   The HTML interpolation can be then used as a React component with the
     *   help of [[BindingHtmlToReact.Implicits]]:
     *   {{{
-    *   import com.yang_bo.reactbinding.BindingHtmlToReact.Implicits.*
+    *   import com.yang_bo.BindingHtmlToReact.Implicits.*
     *   import slinky.web.html.*
     *   val currentNumber = Var(50)
     *   def reactRoot = fieldset(

@@ -1,4 +1,4 @@
-ThisBuild / organization := "com.yang-bo.reactbinding"
+ThisBuild / organization := "com.yang-bo"
 
 lazy val HtmlMountPoint = project
 
