@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-The following example demonstrates how to using React components with [html.scala](https://github.com/Atry/html.scala)'s `@html` literal in Scala 2
+The following example demonstrates how to use React components with [html.scala](https://github.com/Atry/html.scala)'s `@html` literal in Scala 2
 
 ```scala
 import com.thoughtworks.binding.Binding
