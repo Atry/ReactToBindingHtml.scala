@@ -28,7 +28,7 @@ object BindingHtmlToReact extends ComponentWrapper {
     private val mountPoint = Binding {
       wrapperVar.bind match {
         case Some(wrapperElement) =>
-          new HtmlMountPoint(wrapperElement, props.bindingSeq)
+          new HtmlMountPoint(wrapperElement, props.bindingSeq).bind
         case None =>
       }
     }
