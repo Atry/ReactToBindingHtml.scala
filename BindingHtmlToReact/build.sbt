@@ -28,7 +28,7 @@ libraryDependencies += {
   ) {
     "com.yang-bo" %%% "html" % "3.0.2" % Optional
   } else {
-    "com.yang-bo" %%% "html" % "2.0.1" % Optional
+    "com.yang-bo" %%% "html" % "2.0.2" % Optional
   }
 }
 
