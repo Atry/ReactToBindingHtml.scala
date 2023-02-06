@@ -63,9 +63,7 @@ import slinky.core.facade._
     // virtual DOM button element
     button(
       id := "plus",
-      onClick := { (event: Any) =>
-        currentNumber.value += 1
-      }
+      onClick := { (event: Any) => currentNumber.value += 1 }
     )(
       "+"
     )
@@ -120,9 +118,7 @@ def spinner(currentNumber: Var[Int]): ReactElement = {
     // virtual DOM button element
     button(
       id := "plus",
-      onClick := { (event: Any) =>
-        currentNumber.value += 1
-      }
+      onClick := { (event: Any) => currentNumber.value += 1 }
     )(
       "+"
     )
