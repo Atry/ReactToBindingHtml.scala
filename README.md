@@ -53,7 +53,7 @@ import slinky.core.facade._
     <button
       id="minus"
       onclick={ (event: MouseEvent) => currentNumber.value -= 1 }
-    ></button>,
+    >-</button>,
 
     // virtual DOM label element with Binding.scala's `.bind` magic
     Binding {
@@ -110,7 +110,7 @@ def spinner(currentNumber: Var[Int]): ReactElement = {
     html"""<button
       id="minus"
       onclick=${ (event: MouseEvent) => currentNumber.value -= 1 }
-    ></button>""",
+    >-</button>""",
 
     // virtual DOM label element with Binding.scala's `.bind` magic
     Binding {
