@@ -16,3 +16,11 @@ libraryDependencies += {
     "org.scala-js" %%% "scalajs-dom" % "1.2.0"
   }
 }
+
+webpack / version := {
+  if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector("<1"))) {
+    "3.12.0"
+  } else {
+    "5.98.0"
+  }
+}
