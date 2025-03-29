@@ -51,3 +51,11 @@ scalacOptions ++= PartialFunction.condOpt(
 ) { case true =>
   "-P:scalajs:sjsDefinedByDefault"
 }
+
+webpack / version := {
+  if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector("<1"))) {
+    "3.12.0"
+  } else {
+    "5.98.0"
+  }
+}

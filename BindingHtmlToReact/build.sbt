@@ -67,3 +67,11 @@ libraryDependencies ++= PartialFunction.condOpt(
     "org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full
   )
 }
+
+webpack / version := {
+  if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector("<1"))) {
+    "3.12.0"
+  } else {
+    "5.98.0"
+  }
+}
