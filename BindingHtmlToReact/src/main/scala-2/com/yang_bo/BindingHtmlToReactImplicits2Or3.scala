@@ -30,9 +30,8 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *     >+</button>
     *   }
     *   }}}
-    *   The `@html` literal
-    *   can be then used as a React component with the help of
-    *   [[BindingHtmlToReact.Implicits]]:
+    *   The `@html` literal can be then used as a React component with the help
+    *   of [[BindingHtmlToReact.Implicits]]:
     *   {{{
     *   import com.yang_bo.BindingHtmlToReact.Implicits._
     *   import slinky.web.html._
@@ -42,9 +41,8 @@ private[yang_bo] trait BindingHtmlToReactImplicits2Or3 {
     *     spinner(currentNumber)
     *   )
     *   }}}
-    *   Then, the `@html`
-    *   literal can be [[org.lrng.binding.html.render render]]ed into the html
-    *   document,
+    *   Then, the `@html` literal can be
+    *   [[org.lrng.binding.html.render render]]ed into the html document,
     *   {{{
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer

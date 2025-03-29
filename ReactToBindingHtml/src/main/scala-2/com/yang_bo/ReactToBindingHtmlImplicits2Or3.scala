@@ -10,8 +10,7 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
 
   /** Provides the [[com.thoughtworks.binding.bindable.Bindable Bindable]] and
     * [[com.thoughtworks.binding.bindable.BindableSeq BindableSeq]] instances
-    * that allow for inserting React virtual DOM into an
-    * `@html` literal.
+    * that allow for inserting React virtual DOM into an `@html` literal.
     * @example
     *   The following code creates a React virtual DOM tree of a spinner. With
     *   the help of [[BindingReactToReact.Implicits]], the virtual DOM uses
@@ -39,9 +38,8 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *     )
     *   }
     *   }}}
-    *   The virtual DOM can be inserted into a
-    *   `@html` literal with the help
-    *   of [[ReactToBindingHtml.Implicits]]:
+    *   The virtual DOM can be inserted into a `@html` literal with the help of
+    *   [[ReactToBindingHtml.Implicits]]:
     *   {{{
     *   import com.yang_bo.ReactToBindingHtml.Implicits._
     *   import org.lrng.binding.html
@@ -51,8 +49,8 @@ private[yang_bo] trait ReactToBindingHtmlImplicits2Or3 {
     *     {spinner(currentNumber)}
     *   </fieldset>
     *   }}}
-    *   Then, the `@html` literal can
-    *   be [[org.lrng.binding.html.render render]]ed into the html document,
+    *   Then, the `@html` literal can be
+    *   [[org.lrng.binding.html.render render]]ed into the html document,
     *   {{{
     *   import slinky.web.ReactDOM
     *   import slinky.testrenderer.TestRenderer

@@ -63,5 +63,7 @@ scalacOptions ++= PartialFunction.condOpt(
 libraryDependencies ++= PartialFunction.condOpt(
   scalaBinaryVersion.value
 ) { case "2.12" =>
-  compilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
+  compilerPlugin(
+    "org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full
+  )
 }
