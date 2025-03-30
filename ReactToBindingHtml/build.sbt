@@ -26,7 +26,7 @@ libraryDependencies += {
   if (
     VersionNumber(scalaVersion.value).matchesSemVer(SemanticSelector(">=3"))
   ) {
-    "com.yang-bo" %%% "html" % "3.0.2" % Optional
+    "com.yang-bo" %%% "html" % "3.0.3" % Optional
   } else {
     "com.yang-bo" %%% "html" % "2.0.2" % Optional
   }
