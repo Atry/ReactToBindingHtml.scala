@@ -6,7 +6,7 @@ enablePlugins(Example)
 
 libraryDependencies += {
   if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector(">=1"))) {
-    "me.shadaj" %%% "slinky-core" % "0.7.3"
+    "me.shadaj" %%% "slinky-core" % "0.7.5"
   } else {
     "me.shadaj" %%% "slinky-core" % "0.6.8"
   }
@@ -26,7 +26,7 @@ libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.19" % Test
 
 libraryDependencies += {
   if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector(">=1"))) {
-    "me.shadaj" %%% "slinky-testrenderer" % "0.7.3" % Test
+    "me.shadaj" %%% "slinky-testrenderer" % "0.7.5" % Test
   } else {
     "me.shadaj" %%% "slinky-testrenderer" % "0.6.8" % Test
   }
@@ -34,7 +34,7 @@ libraryDependencies += {
 
 libraryDependencies += {
   if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector(">=1"))) {
-    "me.shadaj" %%% "slinky-web" % "0.7.3" % Test
+    "me.shadaj" %%% "slinky-web" % "0.7.5" % Test
   } else {
     "me.shadaj" %%% "slinky-web" % "0.6.8" % Test
   }
