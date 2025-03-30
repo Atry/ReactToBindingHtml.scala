@@ -11,7 +11,7 @@ libraryDependencies += {
 }
 libraryDependencies += {
   if (VersionNumber(scalaJSVersion).matchesSemVer(SemanticSelector(">=1"))) {
-    "org.scala-js" %%% "scalajs-dom" % "2.4.0"
+    "org.scala-js" %%% "scalajs-dom" % "2.8.0"
   } else {
     "org.scala-js" %%% "scalajs-dom" % "1.2.0"
   }
