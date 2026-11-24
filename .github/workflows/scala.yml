@@ -15,8 +15,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scala:
-          - 2.12.20
+        include:
+          - scala: 3.3.5
+          - scala: 2.13.16
+          - scala: 2.13.4
+            sbt-args: --addPluginSbtFile=project/plugins.sbt.scalajs06
+          - scala: 2.12.13
+            sbt-args: --addPluginSbtFile=project/plugins.sbt.scalajs06
 
     steps:
       - uses: actions/checkout@v3
